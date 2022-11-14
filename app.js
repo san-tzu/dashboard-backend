@@ -14,8 +14,9 @@ app.use(express.json());
 
 // Routes
 
-const travelRouter = require('./routes/travelRoutes')
+const travelRouter = require("./routes/travelRoutes");
 
 app.use("/api/v1/travels", travelRouter);
+// app.use("/api/v1/users", userRouter);
 
 module.exports = app;

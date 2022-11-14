@@ -8,4 +8,10 @@ router
   .get(travelController.getAllTravels)
   .post(travelController.createTravel);
 
+router
+  .route("/:id")
+  .get(travelController.getOneTravel)
+  // .patch(travelController.updateTravel)
+  // .delete(travelController.deleteTravel);
+
 module.exports = router;
