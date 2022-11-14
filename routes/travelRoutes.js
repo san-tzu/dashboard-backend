@@ -11,7 +11,7 @@ router
 router
   .route("/:id")
   .get(travelController.getOneTravel)
-  // .patch(travelController.updateTravel)
-  // .delete(travelController.deleteTravel);
+  .patch(travelController.updateTravel)
+  .delete(travelController.deleteTravel);
 
 module.exports = router;

@@ -52,7 +52,10 @@ exports.updateTravel = async (req, res) => {
       new: true,
       runValidators: true,
     });
-    res.status(200).json({ status: "Success!", data: { travel } });
+    res.status(200).json({
+      status: "Success!",
+      data: { travel },
+    });
   } catch (error) {
     res.status(404).json({
       status: "Faild!",
@@ -63,11 +66,11 @@ exports.updateTravel = async (req, res) => {
 
 exports.deleteTravel = async (req, res) => {
   try {
-    await Travel.findByIdAndDelete(req.params.id)
+    await Travel.findByIdAndDelete(req.params.id);
     res.status(204).json({
       status: "Success!",
-      data: null
-    })
+      data: null,
+    });
   } catch (error) {
     res.status(404).json({
       status: "Faild!",
