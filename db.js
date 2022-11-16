@@ -3,8 +3,11 @@ const dotenv = require("dotenv");
 
 dotenv.config({ path: "./config.env" });
 
-// const uri = "mongodb+srv://sahan:sahan@cluster0.mcmck.mongodb.net/travel-log?retryWrites=true&w=majority"
-const db = process.env.MONGODB_URI;
+// Local Database
+const db = process.env.LOCAL_DB
+
+// Atlas Database
+// const db = process.env.MONGODB_URI;
 
 mongoose.connect(db, {
   useNewUrlParser: true,
