@@ -6,7 +6,7 @@ exports.getAllTravels = async (req, res) => {
     res.status(200).json({
       status: "Success!",
       count: travels.length,
-      data: { travels },
+       travels,
     });
   } catch (error) {
     res.status(404).json({
@@ -17,11 +17,12 @@ exports.getAllTravels = async (req, res) => {
 };
 
 exports.createTravel = async (req, res) => {
+  console.log(req.body.formData)
   try {
-    const newTravel = await Travel.create(req.body);
+    const newTravel = await Travel.create(req.body.formData);
     res.status(201).json({
       status: "Success!",
-      data: { travel: newTravel },
+      travel:  newTravel,
     });
   } catch (error) {
     res.status(404).json({
@@ -36,7 +37,7 @@ exports.getOneTravel = async (req, res) => {
     const travel = await Travel.findById(req.params.id);
     res.status(200).json({
       status: "Success!",
-      data: { travel },
+      travel,
     });
   } catch (error) {
     res.status(404).json({
@@ -54,7 +55,7 @@ exports.updateTravel = async (req, res) => {
     });
     res.status(200).json({
       status: "Success!",
-      data: { travel },
+       travel,
     });
   } catch (error) {
     res.status(404).json({
