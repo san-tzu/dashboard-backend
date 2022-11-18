@@ -12,7 +12,8 @@ dotenv.config({ path: "./config.env" });
 //   const db = process.env.MONGODB_URI;
 // }
 
-  const db = process.env.LOCAL_DB;
+  const db = process.env.MONGODB_URI;
+  // const db = process.env.LOCAL_DB;
 
 mongoose.connect(db, {
   useNewUrlParser: true,
