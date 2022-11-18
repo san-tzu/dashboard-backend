@@ -17,12 +17,11 @@ exports.getAllTravels = async (req, res) => {
 };
 
 exports.createTravel = async (req, res) => {
-  console.log(req.body.formData)
   try {
     const newTravel = await Travel.create(req.body.formData);
     res.status(201).json({
       status: "Success!",
-      travel:  newTravel,
+      travel:  {newTravel},
     });
   } catch (error) {
     res.status(404).json({
@@ -49,7 +48,7 @@ exports.getOneTravel = async (req, res) => {
 
 exports.updateTravel = async (req, res) => {
   try {
-    const travel = await Travel.findByIdAndUpdate(req.params.id, req.body, {
+    const travel = await Travel.findByIdAndUpdate(req.params.id, req.body.formData, {
       new: true,
       runValidators: true,
     });

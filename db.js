@@ -3,16 +3,21 @@ const dotenv = require("dotenv");
 
 dotenv.config({ path: "./config.env" });
 
-// Local Database
-const db = process.env.LOCAL_DB
 
-// Atlas Database
-// const db = process.env.MONGODB_URI;
+// if (process.env.NODE_ENV === "development") {
+//   // Local Database
+//   const db = process.env.LOCAL_DB;
+// } else {
+//   // Atlas Database
+//   const db = process.env.MONGODB_URI;
+// }
+
+  const db = process.env.LOCAL_DB;
 
 mongoose.connect(db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-})
+});
 // .then((conn) => {
 //   console.log("MongoDB Connection Succesfull !");
 // })
