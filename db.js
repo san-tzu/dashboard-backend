@@ -11,9 +11,6 @@ if (process.env.NODE_ENV == "development") {
   // Atlas Database
   db = process.env.MONGODB_URI;
 }
-console.log(process.env.NODE_ENV, process.env.LOCAL_DB)
-  // const db = process.env.MONGODB_URI;
-  // const db = process.env.LOCAL_DB;
 
 mongoose.connect(db, {
   useNewUrlParser: true,
