@@ -21,7 +21,7 @@ exports.createTravel = async (req, res) => {
     const newTravel = await Travel.create(req.body.formData);
     res.status(201).json({
       status: "Success!",
-      travel:  {newTravel},
+      newTravel,
     });
   } catch (error) {
     res.status(404).json({
