@@ -16,8 +16,11 @@ app.use(express.json());
 // Routes
 
 const travelRouter = require("./routes/travelRoutes");
+const userRouter = require("./routes/userRoutes");
+const authRouter = require("./routes/authRoutes");
 
+app.use("/api/v1", authRouter);
 app.use("/api/v1/travels", travelRouter);
-// app.use("/api/v1/users", userRouter);
+app.use("/api/v1/users", userRouter);
 
 module.exports = app;
